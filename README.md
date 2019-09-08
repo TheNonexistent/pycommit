@@ -1,5 +1,5 @@
 # pycommit
-A commitizen compatible commit message generator written with python.
+A commitizen compatible commit message generator written in python.
 
 
 Todo:
