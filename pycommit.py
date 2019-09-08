@@ -65,11 +65,11 @@ try:
             print('\n' + color['PURPLE'] + 'Final Commit Message:' + color['ENDC'])
             print(message + '\n')
             print("Please Provide A File Name (default: message.txt)")
-            filename = input(path + color['LGREEN'] + ">" + color['ENDC'])
+            filename = input(path + "/" + color['LGREEN'] + ">" + color['ENDC'])
             if filename:
-                file = open(path + filename, 'w')
+                file = open(path + "/" + filename, 'w')
             else:
-                file = open(path + "message.txt", 'w')
+                file = open(path + "/" + "message.txt", 'w')
                 filename = "message.txt"
             file.write(message)
             file.close()
