@@ -25,6 +25,7 @@ commit_type = [
 ]
 
 message = ""
+path = os.getcwd()
 
 try:
     line = 1
@@ -64,11 +65,11 @@ try:
             print('\n' + color['PURPLE'] + 'Final Commit Message:' + color['ENDC'])
             print(message + '\n')
             print("Please Provide A File Name (default: message.txt)")
-            filename = input(color['LGREEN'] + ">" + color['ENDC'])
+            filename = input(path + color['LGREEN'] + ">" + color['ENDC'])
             if filename:
-                file = open(filename, 'w')
+                file = open(path + filename, 'w')
             else:
-                file = open("message.txt", 'w')
+                file = open(path + "message.txt", 'w')
                 filename = "message.txt"
             file.write(message)
             file.close()
@@ -79,9 +80,6 @@ try:
         elif menu == '4':
             print('\n' + color['LRED'] + 'Aborting Commit.' + color['ENDC'])
             break
-
-
-
 except KeyboardInterrupt:
     print('\n' + color['LRED'] + 'Keyboard Interrupt, Aborting Commit.' + color['ENDC'])
 
