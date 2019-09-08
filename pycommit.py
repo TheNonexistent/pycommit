@@ -1,4 +1,4 @@
-import os
+import os,subprocess,sys
 
 color = {
    "LBLUE" : '\033[94m',
@@ -76,7 +76,11 @@ try:
             print(color['LYELLOW'] + "Written To File." + color['ENDC'] + '\n' + "You Should Run git commit --file " + filename)
             break
         elif menu == '3':
-            os.system('git commit -m ' + message)
+            print('\n' + color['PURPLE'] + 'Final Commit Message:' + color['ENDC'])
+            print(message + '\n')
+            subprocess.Popen("git commit -m '" + message + "'", shell=True, stderr=sys.stderr, stdout=sys.stdout)
+            print(color['LYELLOW'] + "Changes Commited." + color['ENDC'])
+            break
         elif menu == '4':
             print('\n' + color['LRED'] + 'Aborting Commit.' + color['ENDC'])
             break
